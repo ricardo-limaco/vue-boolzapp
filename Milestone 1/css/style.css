@@ -1,0 +1,165 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**************************************************
+* Selettori Tag
+**************************************************/
+body {
+  background-color: #dddbd2;
+}
+main {
+  height: 100vh;
+  padding: 20px 0;
+}
+
+h4 {
+  margin: 0;
+}
+h5 {
+  margin: 0;
+  font-size: 16px;
+}
+p {
+  margin: 0;
+}
+
+/**************************************************
+* Layout
+**************************************************/
+._bg-green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 120px;
+  background-color: #009688; 
+  z-index: -1;
+}
+
+._container {
+  width: 1280px;
+  margin: auto;
+}
+
+
+
+/************** Sidebar **************/
+._sidebar {
+  width: 400px;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+/* Nav */
+._sidebar-nav {
+  background-color: #eae9ea;
+}
+._sidebar-nav img{
+  width: 65px;
+  border-radius: 50%;
+  padding: 10px;
+}
+._sidebar-nav-icon i{
+  color: #b1b0b1;
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+/* Box Notifications */
+._sidebar-box {
+  background-color:#8edafc;
+  padding: 12px 20px;
+}
+._sidebar-box i{
+  color: #8edafc;
+  background-color: white;
+  font-size: 18px;
+  padding: 13px;
+  border-radius: 50%;
+}
+._sidebar-box a{
+  color: #588397;
+  font-size: 14px;
+}
+._sidebar-box p{
+  color: #588397;
+  font-size: 15px;
+  color: black;
+}
+
+/* Search */
+._sidebar-search {
+  padding: 10px;
+}
+._sidebar-search i{
+  color: #b1b0b1;
+  font-size: 15px;
+}
+
+.input-group-text {
+  background-color: white !important;
+  font-size: 15px;
+  border: 1px solid #eeeeee;
+}
+.form-control {
+  border: 1px solid #eeeeee;
+  border-left: 0px;
+}
+
+/* Contacts */
+._sidebar-contacts {
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+._sidebar-contacts img {
+  width: 55px;
+  border-radius: 50%;
+}
+._sidebar-contacts h4 {
+  font-size: 18px;
+}
+._sidebar-contacts p {
+color: #b6b9bb;
+font-size: 12px;
+}
+._sidebar-contacts span {
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 11px;
+color: #b6b9bb;
+}
+
+
+
+
+/************** Main **************/
+/* Nav */
+._sidebar-nav {
+  background-color: #eae9ea;
+}
+._sidebar-nav img{
+  width: 65px;
+  border-radius: 50%;
+  padding: 10px;
+}
+._sidebar-nav-icon i{
+  color: #b1b0b1;
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+/**************************************************
+* Utilities
+**************************************************/
+
