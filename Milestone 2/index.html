@@ -84,7 +84,7 @@
           <img v-bind:src="contacts[currentContact].avatar" alt="avatar">
           <div class="w-100">
             <h5>{{contacts[currentContact].name}}</h5>
-            <p>Ultimo accesso oggi {{}}</p>
+            <p>Ultimo accesso oggi </p>
           </div>
 
           <div class="_sidebar-nav-icon text-end w-100">
@@ -97,21 +97,18 @@
         <!-- Container Chat -->
         <section class="_main-container-chat">
 
-          <!-- My Messages -->
-          <div class="_main-container-chat-messages">
-            <div class="_main-container-chat-messages-text">
-              <h4>Hai portato a spasso il cane?</h4>
-              <p>10/01/2020 15:30:55</p>
+
+          <!-- Messages -->
+          <div v-for="message, in contacts[currentContact].messages"
+          v-bind:class="(message.status == 'sent') ? '_main-container-chat-messages' : '_main-container-chat-messages _contact'">
+            <div v-bind:class="(message.status == 'sent') ? '_main-container-chat-messages-text' : '_main-container-chat-messages-text _contact'">
+              <h4>{{message.text}}</h4>
+              <p>{{message.date}}</p>
             </div>
           </div>
           
-          <!-- Contact Messages -->
-          <div class="_main-container-chat-messages _contact">
-            <div class="_main-container-chat-messages-text _contact">
-              <h4>Tutto fatto!</h4>
-              <p>10/01/2020 15:30:55</p>
-            </div>
-          </div>
+
+
 
         </section>
 

@@ -97,7 +97,7 @@ new Vue ({
       },
     ],
 
-    activeChat: {},
+    // activeChat: {},
     currentContact: 0,
   },
   
