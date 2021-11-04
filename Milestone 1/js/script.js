@@ -109,7 +109,5 @@ new Vue ({
       const date = messages[messages.length - 1].date;
       return date
     },
-
-    }
   },
 })
