@@ -57,15 +57,15 @@
 
 
         <!-- Contacts -->
-        <section class="d-flex flex-column flex-grow-1 overflow-auto">
+        <section class="d-flex flex-column flex-grow-1 overflow-scroll">
 
           <!-- Singolo utente -->
-          <div class="_sidebar-contacts d-flex position-relative" v-for="user, i in contacts">
+          <div class="_sidebar-contacts d-flex position-relative" v-for="user, i in contacts" @click="onChatClick(user)">
             <img v-bind:src="user.avatar" v-bind:alt="`avatar-` + (i + 1)">
             <div class="ps-3 align-top">
-              <span>{{user.date}} 10/01/2020 15:30:55</span>
+              <span>{{getLastDate(user.messages)}}</span>
               <h4>{{user.name}}</h4>
-              <p>{{user.text}} ...</p>
+              <p>{{getLastMessage(user.messages)}} ...</p>
             </div>
           </div>
 
@@ -93,8 +93,23 @@
           </div>
         </section>
 
-        <!-- Container Messages -->
-        <section class="_main-container-messages">
+        <!-- Container Chat -->
+        <section class="_main-container-chat">
+
+          <!-- My Messages -->
+          <div class="_main-container-chat-messages">
+            <div class="_main-container-chat-messages-text">
+              <h4>Hai portato a spasso il cane?</h4>
+              <p>10/01/2020 15:30:55</p>
+            </div>
+          </div>
+          <!-- Contact Messages -->
+          <div class="_main-container-chat-messages _contact">
+            <div class="_main-container-chat-messages-text _contact">
+              <h4>Tutto fatto!</h4>
+              <p>10/01/2020 15:30:55</p>
+            </div>
+          </div>
 
         </section>
 

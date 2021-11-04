@@ -96,5 +96,20 @@ new Vue ({
         ],
       },
     ],
+    activeChat: {},
+  },
+  methods: {
+    // Anteprima messaggio su contatti
+    getLastMessage(messages){
+      const mes = messages[messages.length - 1].text;
+      return mes.slice(0, 25)
+    },
+    // Anteprima data su contatti
+    getLastDate(messages){
+      const date = messages[messages.length - 1].date;
+      return date
+    },
+
+    }
   },
 })
