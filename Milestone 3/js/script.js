@@ -1,8 +1,8 @@
 Vue.config.devtools = true;
 
-new Vue ({
+new Vue({
   el: "#root",
-  data:{
+  data: {
     contacts: [
       //Michele
       {
@@ -10,7 +10,7 @@ new Vue ({
         avatar: "img/avatar_1.jpg",
         visible: true,
         messages: [
-        //singolo messaggio
+          //singolo messaggio
           {
             date: "10/01/2020 15:30:55",
             text: "Hai portato a sapasso il cane?",
@@ -34,7 +34,7 @@ new Vue ({
         avatar: "img/avatar_2.jpg",
         visible: true,
         messages: [
-        //singolo messaggio
+          //singolo messaggio
           {
             date: "20/03/2020 16:30:00",
             text: "Ciao come stai?",
@@ -58,7 +58,7 @@ new Vue ({
         avatar: "img/avatar_3.jpg",
         visible: true,
         messages: [
-        //singolo messaggio
+          //singolo messaggio
           {
             date: "28/03/2020 10:10:40",
             text: "La Marianna va in campagna",
@@ -82,7 +82,7 @@ new Vue ({
         avatar: "img/avatar_4.jpg",
         visible: true,
         messages: [
-        //singolo messaggio
+          //singolo messaggio
           {
             date: "10/01/2020 15:30:55",
             text: "Lo sai che ha aperto una nuova pizzeria?",
@@ -97,42 +97,65 @@ new Vue ({
       },
     ],
 
-    // activeChat: {},
     currentContact: 0,
+    newMessage: "",
   },
-  
+
   methods: {
 
     // Anteprima messaggio su Sidebar Contatti
-    getLastMessage(messages){
+    getLastMessage(messages) {
       const mes = messages[messages.length - 1].text;
       return mes.slice(0, 25)
     },
 
     // Anteprima data su Sidebar Contatti
-    getLastDate(messages){
+    getLastDate(messages) {
       const date = messages[messages.length - 1].date;
       return date
     },
 
-    // Contatto attuale
-    selectContact(i){
+
+
+    
+    // Contatto attuale selezionato
+    selectContact(i) {
       return this.currentContact = i;
     },
 
 
+    // Invio Nuovo messaggio
+    myNewMessage() {
+      let listMessages = this.contacts[this.currentContact].messages;
+
+      let myMessage = {
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+        text: this.newMessage,
+        status: "sent",
+      }
+
+      if (this.newMessage != "") {
+        listMessages.push(myMessage);
+        this.newMessage = "";
+      }
+
+      setTimeout(this.userNewMessage, 1000);
+    },
 
 
+    // Messagio Ok
+    userNewMessage() {
+      let listMessages = this.contacts[this.currentContact].messages;
+
+      let myMessage = {
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+        text: "ok",
+        status: "recived",
+      }
+
+      listMessages.push(myMessage);
+    },
 
 
-
-    // Selezionare utente
-    // onChatClick(chatDaAttivare){
-    //   this.activeChat = chatDaAttivare;
-    // },
-
-    // onSubmitClick(){
-    //   //
-    // }
   },
 })

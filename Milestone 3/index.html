@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!-- Script per Data attuale -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
   <title>Vue Boolzapp</title>
 </head>
@@ -95,7 +97,7 @@
         </section>
 
         <!-- Container Chat -->
-        <section class="_main-container-chat">
+        <section class="_main-container-chat" style="overflow-y: scroll;">
 
 
           <!-- Messages -->
@@ -106,20 +108,16 @@
               <p>{{message.date}}</p>
             </div>
           </div>
-          
-
-
-
         </section>
 
 
-
-        <!-- Container Text -->
+        <!-- Container Text input -->
         <section class="_main-container-text d-flex align-items-center">
           <i class="far fa-smile"></i>
 
           <div class="input-group ">
-            <input type="text" placeholder="Scrivi un messaggio" class="form-control">
+            <input type="text" placeholder="Scrivi un messaggio" class="form-control"
+            v-model="newMessage" @keyup.enter="myNewMessage">
           </div>
 
           <i class="fas fa-microphone"></i>
